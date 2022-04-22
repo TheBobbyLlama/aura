@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Button, TextField } from '@mui/material';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Button, TextField } from "@mui/material";
 import {
   decrement,
   increment,
@@ -8,13 +8,13 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
-import styles from './Counter.module.css';
+} from "./counterSlice";
+import styles from "./Counter.module.css";
 
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
   const incrementValue = Number(incrementAmount) || 0;
 
@@ -42,7 +42,7 @@ export function Counter() {
           variant="outlined"
           label="Label"
           error={incrementAmount === ""}
-          sx={{ width: '64px'}}
+          sx={{ width: "64px" }}
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}

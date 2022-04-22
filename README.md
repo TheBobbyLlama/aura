@@ -4,10 +4,10 @@ This project is a mockup of an employee management system.
 
 ## Technologies Used
 
-* [React Router](https://reactrouter.com/docs/en/v6)
-* [Material UI](https://mui.com/material-ui/getting-started/usage/)
-* [SASS](https://sass-lang.com/documentation)
-* [Prettier](https://prettier.io/docs/en/index.html)
+- [React Router](https://reactrouter.com/docs/en/v6)
+- [Material UI](https://mui.com/material-ui/getting-started/usage/)
+- [SASS](https://sass-lang.com/documentation)
+- [Prettier](https://prettier.io/docs/en/index.html)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
