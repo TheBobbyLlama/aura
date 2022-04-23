@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
+import Button from "../../components/Button";
 import {
   decrement,
   increment,
@@ -22,6 +23,7 @@ export function Counter() {
     <div>
       <div className={styles.row}>
         <Button
+          gradient
           variant="contained"
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
@@ -30,6 +32,7 @@ export function Counter() {
         </Button>
         <span className={styles.value}>{count}</span>
         <Button
+          gradient
           variant="contained"
           aria-label="Increment value"
           onClick={() => dispatch(increment())}

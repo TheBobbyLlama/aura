@@ -1,12 +1,17 @@
 import React from "react";
 import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
+import Button from "./components/Button";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>
+          <h2>button below should be red</h2>
+          <button style={{ backgroundColor: "$red-100" }}>test</button>
+        </div>
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
