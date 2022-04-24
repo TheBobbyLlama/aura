@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { TextField } from "@mui/material";
-import Button from "../../components/Button";
+import Button from "../../components/Button/Button";
 import {
   decrement,
   increment,
@@ -51,7 +51,8 @@ export function Counter() {
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <Button
-          variant="contained"
+          variant="outlined"
+          color="secondary"
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
