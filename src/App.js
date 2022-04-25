@@ -7,7 +7,8 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Login />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
@@ -51,7 +52,7 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
+      </header> */}
     </div>
   );
 }

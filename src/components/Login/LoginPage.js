@@ -1,4 +1,5 @@
 import LoginFeatures from "./LoginFeatures";
+import auroLogo from "../../assets/images/svg/aura-logo-icon.svg";
 
 const Login = (props) => {
   const errMessages = {
@@ -21,11 +22,10 @@ const Login = (props) => {
   return (
     <div className="main-container">
       <div className="middle-container">
+        <img src={auroLogo} className="auro-logo" />
         <div className="title">
-          <img /> /* Auro Pic */
-          <h2>Aura</h2>
           <div className="info-container">
-            <LoginFeatures errMessages={errMessages[e]} />
+            <LoginFeatures />
           </div>
         </div>
       </div>
