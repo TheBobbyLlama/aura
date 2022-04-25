@@ -62,7 +62,6 @@ function App() {
           test
         </Button>
         <Input />
-        <Input inputSize="small" />
       </div>
     </ThemeProvider>
   );
