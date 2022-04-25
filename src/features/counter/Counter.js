@@ -11,7 +11,7 @@ import {
   selectCount,
 } from "./counterSlice";
 import styles from "./Counter.module.css";
-
+import Input from "../../components/Input/Input";
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
@@ -30,6 +30,8 @@ export function Counter() {
         >
           -
         </Button>
+        <Input />
+
         <span className={styles.value}>{count}</span>
         <Button
           gradient
