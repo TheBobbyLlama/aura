@@ -3,9 +3,15 @@ import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import "./App.scss";
 
+import AuraHeader from "./components/AuraHeader/AuraHeader";
+
 function App() {
   return (
     <div className="App">
+      <AuraHeader>
+        <div>Item 1</div>
+        <div>Item 2</div>
+      </AuraHeader>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
