@@ -6,15 +6,15 @@ class Error extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            errorMeg: this.props.errorMeg
+            errorMsg: this.props.errorMsg
         };
       }
       
       render() {
-        return <span>
+        return <div className='error-container'>
         <svg src={error} />
-        <p class='errorMeg'>{this.state.errorMeg}</p>
-        </span>;
+        <span className='errorMsg'>{this.state.errorMsg}</span>
+        </div>;
       }
     };
 
