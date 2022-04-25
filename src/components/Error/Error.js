@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Error.scss'
 
 class Error extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Error extends React.Component {
       
       render() {
         return <span>
-        <img src="../../assets/images/images/error.png" />
+        <svg src="../../assets/images/svg/Exclamation_Circle_Red.svg" />
         <p>{this.state.errorMeg}</p>
         </span>;
       }
