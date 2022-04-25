@@ -23,7 +23,7 @@ class Reset extends React.Component {
         <br />
         <p class='thankyou'>Thank you</p>
         <p classs='team'>The Aura Team</p>
-        <footer></footer>
+        <footer>&copy; Aura</footer>
         </>;
       }
     };
