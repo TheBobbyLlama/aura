@@ -4,6 +4,23 @@
   gap: 20px;
 }
 
-.login-using {
-  border-top: 1px solid grey;
+.login-using-txt {
+  display: block;
+  align-self: flex-start;
+  text-decoration: none;
+  color: gray;
+}
+
+.forgot-password-txt {
+  display: block;
+  align-self: flex-end;
+  text-decoration: none;
+  color: gray;
+}
+
+.gmail-icon {
+  height: 1.5rem;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }

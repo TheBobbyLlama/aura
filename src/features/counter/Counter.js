@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
+import Button from "../../components/Button/Button";
 import {
   decrement,
   increment,
@@ -10,7 +11,7 @@ import {
   selectCount,
 } from "./counterSlice";
 import styles from "./Counter.module.css";
-
+import Input from "../../components/Input/Input";
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
@@ -22,14 +23,18 @@ export function Counter() {
     <div>
       <div className={styles.row}>
         <Button
+          gradient
           variant="contained"
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
           -
         </Button>
+        <Input />
+
         <span className={styles.value}>{count}</span>
         <Button
+          gradient
           variant="contained"
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
@@ -48,7 +53,8 @@ export function Counter() {
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <Button
-          variant="contained"
+          variant="outlined"
+          color="secondary"
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
