@@ -1,17 +1,19 @@
-import MUIInput from "@mui/material/Input";
+import MUITextField from "@mui/material/TextField";
 
 const style = {
-  paddingRight: "3px",
-  paddingLeft: "3px",
-  paddingTop: "8px",
-  paddingRight: "8px",
-  border: "2px solid lightgrey",
+  "MuiOutlinedInput-input": {
+    "& .MuiTextField-root00": {
+      padding: "6px 16px",
+      border: "2px solid lightgrey",
+      lineHeight: "1.75",
+    },
+  },
 };
 
 export default function Input(props) {
   return (
-    <MUIInput variant="outlined" disableUnderline sx={style} {...props}>
+    <MUITextField variant="outlined" disableUnderline sx={style} {...props}>
       {props.children}
-    </MUIInput>
+    </MUITextField>
   );
 }
