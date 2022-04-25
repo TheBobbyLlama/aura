@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {companyLogo} from '../../assets/images/images/fav-icon.png'
 
 class Reset extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Reset extends React.Component {
       
       render() {
         return <>
-        <svg src='../../assets/images/images/fav-icon.png' />
+        <svg src={companyLogo} />
         <h3>Hi {this.state.errorMeg},</h3>
         <p>
         We've received a request to reset your password. If you didn't make this request,just ignore this email. Otherwise, you can rerset your password using this link:

@@ -1,5 +1,6 @@
 import React from 'react';
-import './reset.scss'
+import './reset.scss';
+import {success} from "../../assets/images/svg/Checkmark_green.svg";
 
 function ResetMsg() {
       
@@ -7,7 +8,7 @@ function ResetMsg() {
         <>
           <header></header>
           <div class="content-container">
-            <svg src="../../assets/images/svg/Checkmark_green.svg " />
+            <svg src={success} />
             <p>Password reset successful</p>
           </div>
         </>
