@@ -58,10 +58,18 @@ function App() {
             </a>
           </span>
         </header>
-        <Button fullWidth variant="contained">
+        <Button size="small" variant="contained">
           test
         </Button>
+        <Input size="small" />
+        <Button size="medium" variant="contained">
+          test
+        </Button>{" "}
         <Input />
+        <Button size="large" variant="contained">
+          test
+        </Button>
+        <Input size="large" />
       </div>
     </ThemeProvider>
   );
