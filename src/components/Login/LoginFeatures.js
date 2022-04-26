@@ -3,15 +3,46 @@ import Input from "../Input/Input";
 //import Error from "./Error/error"
 import gmailLogo from "../../assets/images/svg/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
+import { useState } from "react";
+
 const LoginFeatures = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const logInfo = () => {
+    console.log(email);
+    console.log(password);
+  };
+
   return (
-    <div className="container">
-      <Input placeholder="Email Address" size="large" />
-      <Input placeholder="Password" size="large" />
+    <div className="center-container">
+      <Input
+        placeholder="Email Address"
+        size="large"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+      />
+      <Input
+        placeholder="Password"
+        size="large"
+        type="password"
+        value={password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+      />
       <Button value="Login" size="large" />
       {/* {props.error && <Error errMessage={props.error} />} */}
       <div>
-        <Button variant="contained" fullWidth="true" gradient size="large">
+        <Button
+          variant="contained"
+          fullWidth="true"
+          gradient
+          size="large"
+          onClick={logInfo}
+        >
           LOGIN
         </Button>
       </div>

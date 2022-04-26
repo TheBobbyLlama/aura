@@ -1,12 +1,15 @@
 .main-container {
+  align-items: center;
   background-image: url("../../assets/images/images/shutterstock_363952133.jpg");
 
   background: linear-gradient(
-      rgba(8, 10, 87, 0.445) 100%,
-      rgba(8, 10, 87, 0.445) 100%
+      rgba(22, 48, 64, 0.85) 100%,
+      rgba(22, 48, 64, 0.85) 100%
     ),
     url("../../assets/images/images/shutterstock_363952133.jpg");
-  background-size: auto;
+  background-position: center;
+  background-size: cover;
+
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -19,7 +22,8 @@
   border-radius: 20px;
   height: min-content;
   justify-content: center;
-  margin-top: 200px;
+  max-width: 464px;
+  width: 100%;
   background: linear-gradient(
     rgba(2, 2, 20, 0.445) 100%,
     rgba(2, 2, 20, 0.445) 100%
@@ -27,7 +31,7 @@
 }
 .title {
   background-color: white;
-  width: 400px;
+
   display: flex;
   flex-direction: column;
 
