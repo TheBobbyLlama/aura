@@ -1,17 +1,32 @@
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-//import Error from "./Error/error"
+import Error from "../Error/Error";
 import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
+import { login, getErrorMessage } from "../../mockApi/auth.api";
 
 const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorShow, setErrorShow] = useState("");
 
   const logInfo = () => {
-    console.log(email);
-    console.log(password);
+    // console.log(email);
+    // console.log(password);
+
+    checkUserInfo();
+  };
+
+  const checkUserInfo = () => {
+    const user = login({ email: email, password: password });
+    user.then((res, rej) => {
+      if (res) {
+        getErrorMessage(res.errorCode).then((r) => setErrorShow(r.result));
+      } else {
+        console.log(rej);
+      }
+    });
   };
 
   return (
@@ -34,7 +49,7 @@ const LoginFeatures = (props) => {
         }}
       />
       <Button value="Login" size="large" />
-      {/* {props.error && <Error errMessage={props.error} />} */}
+      {errorShow && <Error errorMsg={errorShow} />}
       <div>
         <Button
           variant="contained"
