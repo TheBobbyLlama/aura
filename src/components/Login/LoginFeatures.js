@@ -38,8 +38,8 @@ const LoginFeatures = (props) => {
       <div>
         <Button
           variant="contained"
-          fullWidth="true"
-          gradient
+          fullWidth={true}
+          gradient="true"
           size="large"
           onClick={logInfo}
         >
@@ -62,7 +62,7 @@ const LoginFeatures = (props) => {
           value="Gmail"
           variant="outlined"
           color="secondary"
-          fullWidth="true"
+          fullWidth={true}
           size="large"
         >
           <span>

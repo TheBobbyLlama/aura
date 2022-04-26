@@ -33,12 +33,7 @@ export default function Input(props) {
   const inputProps = generateInputStyle(props);
 
   return (
-    <MUITextField
-      variant="outlined"
-      disableUnderline
-      inputProps={inputProps}
-      {...props}
-    >
+    <MUITextField variant="outlined" inputProps={inputProps} {...props}>
       {props.children}
     </MUITextField>
   );
