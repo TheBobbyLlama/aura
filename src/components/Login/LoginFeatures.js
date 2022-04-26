@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 //import Error from "./Error/error"
-import gmailLogo from "../../assets/images/svg/gmail-icon-svg-27.jpeg";
+import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
 
