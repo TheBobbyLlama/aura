@@ -4,14 +4,14 @@
   font-size: 0.9em;
   gap: 6px;
   padding: 0 4px;
+  text-align: left;
 }
 
-.error-container > img {
+.errorImg {
   height: 1.2em;
   margin-top: 2px;
 }
 
 .errorMsg {
   color: red;
-  text-align: left;
 }
