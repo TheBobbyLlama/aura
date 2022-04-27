@@ -7,13 +7,17 @@ import Login from "./components/Login/LoginPage";
 
 import "./App.scss";
 
+import AuraHeader from "./components/AuraHeader/AuraHeader";
+
 function App() {
   return (
+
     <ThemeProvider theme={theme}>
       <div className="App">
         <Login />
       </div>
     </ThemeProvider>
+
   );
 }
 
