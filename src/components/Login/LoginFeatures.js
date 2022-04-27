@@ -35,9 +35,7 @@ const LoginFeatures = (props) => {
         }}
       />
 
-      {"errorShow" && (
-        <Error errorMsg={"errorShow"} className="error-container" />
-      )}
+      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
 
       <Button
         variant="contained"
