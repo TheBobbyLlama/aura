@@ -12,21 +12,15 @@ const LoginFeatures = (props) => {
   const [errorState, setErrorState] = useState();
 
   const logInfo = () => {
-    console.log(email);
-    console.log(password);
-  };
-
-  function getLogInfo(){
     return {
       email: email,
-      passWord: password,
-      jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJ0ZXN0QGFudHJhLmNvbSIsIm5hbWUiOiJ0ZXN0IiwidXNlcklkIjoiMTIzMjEzMTIiLCJpYXQiOjE1MTYyMzkwMjJ9.XxBVHmaT7wGOlb9zGR7CSdQ7ZAvDx4Rqlt1trv9rmTU"
+      passWord: password
     }
-  }
+  };
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    let user = getLogInfo();
+    let user = logInfo();
     login(user)
       .then((res) => {
         console.log(res);
