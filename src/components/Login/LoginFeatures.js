@@ -24,7 +24,7 @@ const LoginFeatures = (props) => {
     login(user)
       .then((res) => {
         let errorCode = res.errorCode;
-        if (errorCode !== 0){
+        if (errorCode){
           getErrorMessage(errorCode).then((res) => {
           setErrorState(res.result);})
         } else{
