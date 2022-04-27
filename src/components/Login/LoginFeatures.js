@@ -14,34 +14,55 @@ const LoginFeatures = (props) => {
   const [formIsLoading, setFormIsLoading] = useState(false);
   // const [errorShow, setErrorShow] = useState("");
 
-  function handleLogin(e) {
+  // function handleLogin(e) {
+  //   e.preventDefault();
+  //   setFormIsLoading(true);
+
+  //   login({ email, passWord: password }).then((res) => {
+  //     if (res.errCode) {
+  //       getErrorMessage(res.errorCode).then((res) => {
+  //         if (res.errorCode) {
+  //           getErrorMessage(res.errorCode).then((res) => {
+  //             setErrMsg(
+  //               res.result || "An error has occured. Please try again later."
+  //             );
+  //             setFormIsLoading(false);
+  //           });
+  //         } else {
+  //           setErrMsg(res.result);
+  //           setFormIsLoading(false);
+  //         }
+  //       });
+  //     } else {
+  //       console.log("success");
+  //       alert(res.result.jwt);
+  //       setFormIsLoading(false);
+  //     }
+  //   });
+  // }
+
+  async function handleLogin2(e) {
     e.preventDefault();
     setFormIsLoading(true);
 
-    login({ email, passWord: password }).then((res) => {
-      if (res.errCode) {
-        getErrorMessage(res.errorCode).then((res) => {
-          if (res.errorCode) {
-            getErrorMessage(res.errorCode).then((res) => {
-              setErrMsg(
-                res.result || "An error has occured. Please try again later."
-              );
-              setFormIsLoading(false);
-            });
-          } else {
-            setErrMsg(res.result);
-            setFormIsLoading(false);
-          }
-        });
-      } else {
-        console.log("success");
-        alert(res.result.jwt);
+    const res = await login({ email, passWord: password });
+    console.log(res);
+
+    if (res.errorCode) {
+      getErrorMessage(res.errorCode).then((res) => {
+        setErrMsg(
+          res.result || "An error has occured. Please try again later."
+        );
         setFormIsLoading(false);
-      }
-    });
+      });
+    } else {
+      console.log("success");
+      alert(res.result.jwt);
+      setFormIsLoading(false);
+    }
   }
   return (
-    <form className="center-container" onSubmit={handleLogin}>
+    <form className="center-container" onSubmit={handleLogin2}>
       <Input
         placeholder="Email Address"
         size="large"
