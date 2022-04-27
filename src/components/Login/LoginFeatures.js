@@ -5,18 +5,43 @@ import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
 
+import { login, getErrorMessage } from "../../api/mockLogin";
+
 const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorShow, setErrorShow] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [formIsLoading, setFormIsLoading] = useState(false);
+  // const [errorShow, setErrorShow] = useState("");
 
-  const logInfo = () => {
-    console.log(email);
-    console.log(password);
-  };
+  function handleLogin(e) {
+    e.preventDefault();
+    setFormIsLoading(true);
 
+    login({ email, passWord: password }).then((res) => {
+      if (res.errCode) {
+        getErrorMessage(res.errorCode).then((res) => {
+          if (res.errorCode) {
+            getErrorMessage(res.errorCode).then((res) => {
+              setErrMsg(
+                res.result || "An error has occured. Please try again later."
+              );
+              setFormIsLoading(false);
+            });
+          } else {
+            setErrMsg(res.result);
+            setFormIsLoading(false);
+          }
+        });
+      } else {
+        console.log("success");
+        alert(res.result.jwt);
+        setFormIsLoading(false);
+      }
+    });
+  }
   return (
-    <form className="center-container" onSubmit={logInfo}>
+    <form className="center-container" onSubmit={handleLogin}>
       <Input
         placeholder="Email Address"
         size="large"
@@ -35,7 +60,7 @@ const LoginFeatures = (props) => {
         }}
       />
 
-      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
+      {errMsg && <Error errorMsg={errMsg} className="error-container" />}
 
       <Button
         variant="contained"
