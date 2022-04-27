@@ -4,12 +4,12 @@ import Error from "../Error/Error"
 import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
-import { login } from '../../api/auth.api';
+import { login, getErrorMessage } from '../../api/auth.api';
 
 const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorState, setErrorState] = useState();
+  const [errorState, setErrorState] = useState("");
 
   const logInfo = () => {
     return {
@@ -23,7 +23,14 @@ const LoginFeatures = (props) => {
     let user = logInfo();
     login(user)
       .then((res) => {
-        setErrorState(res.result);
+        let errorCode = res.errorCode;
+        if (errorCode !== 0){
+          getErrorMessage(errorCode).then((res) => {
+          setErrorState(res.result);})
+        } else{
+          setErrorState();
+        }
+        
       });
   }
 
