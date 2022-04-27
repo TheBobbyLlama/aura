@@ -34,8 +34,10 @@ const LoginFeatures = (props) => {
           setPassword(e.target.value);
         }}
       />
-      <Button value="Login" size="large" />
-      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
+
+      {"errorShow" && (
+        <Error errorMsg={"errorShow"} className="error-container" />
+      )}
 
       <Button
         variant="contained"
