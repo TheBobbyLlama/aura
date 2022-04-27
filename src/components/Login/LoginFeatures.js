@@ -19,28 +19,30 @@ const LoginFeatures = () => {
     setFormBusy(true);
 
     // Hit login service.
-    login({ email, passWord: password }).then((response) => {
+    login({ email, passWord: password }).then((loginResponse) => {
       // Got an error?  Hit the error message service for more information.
-      if (response.errorCode) {
-        getErrorMessage(response.errorCode).then((response) => {
+      if (loginResponse.errorCode) {
+        getErrorMessage(loginResponse.errorCode).then((errMessageResponse) => {
           // STILL got an error?  Try to get an error message for the new error.
-          if (response.errorCode) {
-            getErrorMessage(response.errorCode).then((response) => {
-              setErrorMessage(
-                response.result ||
-                  "An error has occurred.  Please try again later."
-              );
-              setFormBusy(false);
-            });
+          if (errMessageResponse.errorCode) {
+            getErrorMessage(errMessageResponse.errorCode).then(
+              (errMessageSecondResponse) => {
+                setErrorMessage(
+                  errMessageSecondResponse.result ||
+                    "An error has occurred.  Please try again later."
+                );
+                setFormBusy(false);
+              }
+            );
           } else {
             // Got an error message back from the service.
-            setErrorMessage(response.result);
+            setErrorMessage(errMessageResponse.result);
             setFormBusy(false);
           }
         });
       } else {
         // Success!
-        alert(response.result.jwt);
+        alert(loginResponse.result.jwt);
         setFormBusy(false);
       }
     });
