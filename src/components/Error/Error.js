@@ -11,7 +11,7 @@ class Error extends React.Component {
       
       render() {
         return <div className='error-container'>
-        <img className='errorImg' src={errorSvg} />
+        <img className='errorImg' src={errorSvg} alt='errorImg'/>
         <span className='errorMsg'>{this.state.errorMsg}</span>
         </div>;
       }
