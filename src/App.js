@@ -6,13 +6,6 @@ import theme from "./AuraTheme/theme";
 import "./App.scss";
 
 function App() {
-  const navigate = useNavigate();
-  /*
-  useEffect(() => {
-    // TODO - Check authentication and send to either Dashboard or Login!
-    navigate("/login");
-  }, [navigate]);*/
-
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
