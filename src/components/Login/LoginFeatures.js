@@ -23,11 +23,6 @@ const LoginFeatures = (props) => {
     let user = logInfo();
     login(user)
       .then((res) => {
-        console.log(res);
-        return getErrorMessage(res.errorCode);
-      })
-      .then((res) => {
-        //setIsLoading(false);
         setErrorState(res.result);
       });
   }
@@ -60,7 +55,7 @@ const LoginFeatures = (props) => {
           fullWidth={true}
           gradient="true"
           size="large"
-          onClick={logInfo}
+          onClick={handleFormSubmit}
         >
           LOGIN
         </Button>
