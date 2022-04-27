@@ -11,7 +11,8 @@ const LoginFeatures = (props) => {
   const [password, setPassword] = useState("");
   const [errorShow, setErrorShow] = useState("");
 
-  const logInfo = () => {
+  const logInfo = (e) => {
+    e.preventDefault();
     // console.log(email);
     // console.log(password);
 
@@ -30,7 +31,7 @@ const LoginFeatures = (props) => {
   };
 
   return (
-    <div className="center-container">
+    <form className="center-container" onSubmit={logInfo}>
       <Input
         placeholder="Email Address"
         size="large"
@@ -50,17 +51,16 @@ const LoginFeatures = (props) => {
       />
       <Button value="Login" size="large" />
       {errorShow && <Error errorMsg={errorShow} />}
-      <div>
-        <Button
-          variant="contained"
-          fullWidth={true}
-          gradient="true"
-          size="large"
-          onClick={logInfo}
-        >
-          LOGIN
-        </Button>
-      </div>
+
+      <Button
+        variant="contained"
+        fullWidth={true}
+        gradient="true"
+        size="large"
+        type="submit"
+      >
+        LOGIN
+      </Button>
 
       <a href="" className="forgot-password-txt">
         Forgot Password
@@ -72,21 +72,19 @@ const LoginFeatures = (props) => {
         Login using
       </a>
 
-      <div>
-        <Button
-          value="Gmail"
-          variant="outlined"
-          color="secondary"
-          fullWidth={true}
-          size="large"
-        >
-          <span>
-            <img src={gmailLogo} className="gmail-icon" />
-          </span>
-          Gmail
-        </Button>
-      </div>
-    </div>
+      <Button
+        value="Gmail"
+        variant="outlined"
+        color="secondary"
+        fullWidth={true}
+        size="large"
+      >
+        <span>
+          <img src={gmailLogo} className="gmail-icon" />
+        </span>
+        Gmail
+      </Button>
+    </form>
   );
 };
 
