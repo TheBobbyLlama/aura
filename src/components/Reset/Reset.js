@@ -1,5 +1,5 @@
 import React from 'react';
-import companyLogo from '../../assets/images/images/fav-icon.png';
+import companyLogo from "../../assets/images/svg/aura-logo-icon.svg";
 import Button from "../Button/Button";
 
 
@@ -13,7 +13,7 @@ class Reset extends React.Component {
       
       render() {
         return <div class="content-container">
-        <img className='fav-icon_svg' src={companyLogo} />
+        <img className='fav-icon_svg' src={companyLogo} alt='companyLogo' />
         <br />
         <h3>Hi {this.state.errorMeg},</h3>
         <p>
