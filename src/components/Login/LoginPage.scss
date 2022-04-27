@@ -1,0 +1,46 @@
+.main-container {
+  align-items: center;
+  background-image: url("../../assets/images/images/shutterstock_363952133.jpg");
+
+  background: linear-gradient(
+      rgba(22, 48, 64, 0.85) 100%,
+      rgba(22, 48, 64, 0.85) 100%
+    ),
+    url("../../assets/images/images/shutterstock_363952133.jpg");
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 20px;
+  height: min-content;
+  justify-content: center;
+  max-width: 464px;
+  width: 100%;
+  background: linear-gradient(
+    rgba(2, 2, 20, 0.445) 100%,
+    rgba(2, 2, 20, 0.445) 100%
+  );
+}
+.title {
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 20px;
+  height: auto;
+  padding: 40px;
+}
+
+.auro-logo {
+  height: 4rem;
+  margin-bottom: 12px;
+}
