@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Error from "../Error/Error";
@@ -47,15 +48,13 @@ const LoginFeatures = (props) => {
         LOGIN
       </Button>
 
-      <a href="" className="forgot-password-txt">
-        Forgot Password
-      </a>
+      <Link to="/reset" className="forgot-password-txt">
+        <span>Forgot Password</span>
+      </Link>
 
       <Divider sx={{ marginBottom: -2 }} />
 
-      <a href="" className="login-using-txt">
-        Login using
-      </a>
+      <span className="login-using-txt">Login using</span>
 
       <Button
         value="Gmail"
