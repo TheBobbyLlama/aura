@@ -50,7 +50,7 @@ const LoginFeatures = (props) => {
         }}
       />
       <Button value="Login" size="large" />
-      {errorShow && <Error errorMsg={errorShow} />}
+      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
 
       <Button
         variant="contained"
@@ -66,7 +66,7 @@ const LoginFeatures = (props) => {
         Forgot Password
       </a>
 
-      <Divider />
+      <Divider sx={{ marginBottom: -2 }} />
 
       <a href="" className="login-using-txt">
         Login using
