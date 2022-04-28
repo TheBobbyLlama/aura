@@ -5,6 +5,7 @@ import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
 import { login, getErrorMessage } from "../../mockApi/auth.api";
+import WithFormData from "../../renderProps/WithFormData";
 
 const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
@@ -40,66 +41,72 @@ const LoginFeatures = (props) => {
   };
 
   return (
-    <form className="center-container" onSubmit={invokeFuncs}>
-      <Input
-        placeholder="Email Address"
-        size="large"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <Input
-        placeholder="Password"
-        size="large"
-        type="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <Button value="Login" size="large" />
+    <WithFormData>
+      {(formState, handleChange) => {
+        return (
+          <form className="center-container" onSubmit={invokeFuncs}>
+            <Input
+              placeholder="Email Address"
+              size="large"
+              name="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <Input
+              placeholder="Password"
+              size="large"
+              type="password"
+              name="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            <Button value="Login" size="large" />
 
-      {successResult ? (
-        <span className="loader "></span>
-      ) : (
-        errorShow && <Error errorMsg={errorShow} className="error-container" />
-      )}
+            {successResult ? (
+              <span className="loader "></span>
+            ) : (
+              errorShow && (
+                <Error errorMsg={errorShow} className="error-container" />
+              )
+            )}
 
-      <Button
-        variant="contained"
-        fullWidth={true}
-        gradient="true"
-        size="large"
-        type="submit"
-        disabled={disableBt}
-      >
-        LOGIN
-      </Button>
+            <Button
+              variant="contained"
+              fullWidth={true}
+              gradient="true"
+              size="large"
+              type="submit"
+              disabled={disableBt}
+            >
+              LOGIN
+            </Button>
 
-      <a href="" className="forgot-password-txt">
-        Forgot Password
-      </a>
+            <a href="" className="forgot-password-txt">
+              Forgot Password
+            </a>
 
-      <Divider sx={{ marginBottom: -2 }} />
+            <Divider sx={{ marginBottom: -2 }} />
 
-      <a href="" className="login-using-txt">
-        Login using
-      </a>
+            <a href="" className="login-using-txt">
+              Login using
+            </a>
 
-      <Button
-        value="Gmail"
-        variant="outlined"
-        color="secondary"
-        fullWidth={true}
-        size="large"
-      >
-        <span>
-          <img src={gmailLogo} className="gmail-icon" />
-        </span>
-        Gmail
-      </Button>
-    </form>
+            <Button
+              value="Gmail"
+              variant="outlined"
+              color="secondary"
+              fullWidth={true}
+              size="large"
+            >
+              <span>
+                <img src={gmailLogo} className="gmail-icon" />
+              </span>
+              Gmail
+            </Button>
+          </form>
+        );
+      }}
+    </WithFormData>
   );
 };
 
