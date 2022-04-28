@@ -5,7 +5,8 @@ import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
 import { login, getErrorMessage } from "../../mockApi/auth.api";
-import { Formik, Field, Form } from "formik";
+// import WithFormData from "../../renderProps/WithFormData";
+import { useFormLogic } from "../hooks/useFormLogic";
 
 const LoginFeatures = (props) => {
   const [formState, setFormState, handleChange] = useFormLogic({

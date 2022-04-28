@@ -11,14 +11,5 @@ export const useFormLogic = ({ initalFormState, handleFormSubmit }) => {
   const handleSubmit = () => {
     handleFormSubmit(formState);
   };
-  return [formState, setFormState, handleChange, handleFormSubmit];
+  return [formState, setFormState, handleChange, handleSubmit];
 };
-
-////to be used in LoginFeatures component
-const [formState, setFormState, handleChange, handleFormSubmit] = useFormLogic({
-  initalFormState: {
-    email: "asdf",
-    password: "",
-  },
-  handleFormSubmit: handleLogin,
-});
