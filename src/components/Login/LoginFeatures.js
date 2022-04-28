@@ -10,28 +10,37 @@ const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorShow, setErrorShow] = useState("");
+  const [successResult, setSuccessResult] = useState(false);
+  const [disableBt, setDisableBt] = useState(false);
 
-  const logInfo = (e) => {
+  const invokeFuncs = (e) => {
     e.preventDefault();
-    // console.log(email);
-    // console.log(password);
-
     checkUserInfo();
+    timer();
   };
 
   const checkUserInfo = () => {
-    const user = login({ email: email, password: password });
-    user.then((res, rej) => {
-      if (res) {
+    setDisableBt(true);
+    setSuccessResult(true);
+    const userPromise = login({ email: email, passWord: password });
+    userPromise.then((res, rej) => {
+      try {
         getErrorMessage(res.errorCode).then((r) => setErrorShow(r.result));
-      } else {
-        console.log(rej);
+      } catch (error) {
+        console.log(error);
       }
     });
   };
 
+  const timer = () => {
+    setTimeout(() => {
+      setDisableBt(false);
+      setSuccessResult(false);
+    }, 1000);
+  };
+
   return (
-    <form className="center-container" onSubmit={logInfo}>
+    <form className="center-container" onSubmit={invokeFuncs}>
       <Input
         placeholder="Email Address"
         size="large"
@@ -50,7 +59,12 @@ const LoginFeatures = (props) => {
         }}
       />
       <Button value="Login" size="large" />
-      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
+
+      {successResult ? (
+        <span className="loader "></span>
+      ) : (
+        errorShow && <Error errorMsg={errorShow} className="error-container" />
+      )}
 
       <Button
         variant="contained"
@@ -58,6 +72,7 @@ const LoginFeatures = (props) => {
         gradient="true"
         size="large"
         type="submit"
+        disabled={disableBt}
       >
         LOGIN
       </Button>

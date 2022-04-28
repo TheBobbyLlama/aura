@@ -16,7 +16,7 @@ const checkValidEmail = (user) => {
 };
 
 const checkValidPassword = (user) => {
-  return user.email === mockUser.email && user.password === mockUser.passWord;
+  return user.email === mockUser.email && user.passWord === mockUser.passWord;
 };
 
 // Mock Client API call
