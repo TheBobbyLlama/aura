@@ -1,0 +1,15 @@
+.header-button {
+  height: 26px;
+  overflow: hidden;
+  width: 26px;
+}
+
+.header-button > img {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.header-button.rounded {
+  border-radius: 50%;
+}

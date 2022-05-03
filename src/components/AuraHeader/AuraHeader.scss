@@ -1,6 +1,10 @@
 .aura-header {
   align-items: center;
-  background: linear-gradient(to right, #163160, #0a96e3);
+  background: linear-gradient(
+    to right,
+    $aura-gradient-dark,
+    $aura-gradient-light
+  );
   color: white;
   display: flex;
   gap: 20px;
