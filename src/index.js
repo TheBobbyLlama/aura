@@ -7,6 +7,7 @@ import { store } from "./redux/store";
 import App from "./App";
 import Login from "./components/Login/LoginPage";
 import Reset from "./components/Reset/Reset";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 import "./index.scss";
 
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route path="/" element={<App />}>
             <Route path="" element={<Login />} />
             <Route path="reset" element={<Reset />} />
+            <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
