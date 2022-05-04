@@ -1,0 +1,60 @@
+.progress-container {
+  //didn't work
+  //   background-color: $aura-gradient-dark;
+  background-color: rgb(22, 57, 172);
+  box-sizing: border-box;
+  width: 100%;
+  border: solid white 25px;
+  padding: 5px;
+  border-radius: 40px;
+}
+
+.img-icon {
+  width: 30px;
+}
+
+.img-icon:hover {
+  cursor: pointer;
+  background-color: rgb(46, 86, 170);
+}
+
+.progress-header {
+  padding-top: 10px;
+  margin: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.span-text {
+  font-weight: bolder;
+  color: rgb(19, 170, 120);
+  padding-right: 40px;
+}
+
+.progress-input {
+  //add search icon
+  background: url("");
+  padding: 12px;
+  background-color: white;
+  border-radius: 50px;
+  height: 25px;
+  width: 250px;
+}
+
+.progress-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-message {
+  width: auto;
+  background-color: aqua;
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 3px;
+}
+
+.progress-sub-container {
+  display: flex;
+  flex-direction: column;
+}

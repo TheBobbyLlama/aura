@@ -1,0 +1,42 @@
+export const dummyData = [
+  {
+    id: 0,
+    name: "1Dummy",
+    role: "Java Dev",
+    status: "New",
+    progress: "0%",
+    date: "28 October 2021",
+  },
+  {
+    id: 1,
+    name: "1Dummy",
+    role: "Java Dev",
+    status: "New",
+    progress: "0%",
+    date: "28 October 2021",
+  },
+  {
+    id: 2,
+    name: "3Dummy",
+    role: "Java Dev",
+    status: "New",
+    progress: "0%",
+    date: "28 October 2021",
+  },
+  {
+    id: 3,
+    name: "4Dummy",
+    role: "Java Dev",
+    status: "New",
+    progress: "0%",
+    date: "28 October 2021",
+  },
+  {
+    id: 4,
+    name: "5Dummy",
+    role: "Java Dev",
+    status: "New",
+    progress: "0%",
+    date: "28 October 2021",
+  },
+];
