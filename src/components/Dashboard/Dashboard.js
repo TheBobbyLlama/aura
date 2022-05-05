@@ -1,6 +1,7 @@
 import AuraHeader from "../AuraHeader/AuraHeader";
 import HeaderButton from "../HeaderButton/HeaderButton";
 import SideBar from "../SideBar/SideBar";
+import DashboardCards from "../DashboardCards/DashboardCards";
 
 import userPic from "../../assets/images/images/emp-userpic.jpg";
 import reminderIcon from "../../assets/images/images/bell.png";
@@ -19,6 +20,7 @@ const Dashboard = () => {
       <main className="dashboard__content">
         <SideBar />
         <h1>Content Goes Here!</h1>
+        <DashboardCards />
       </main>
     </div>
   );

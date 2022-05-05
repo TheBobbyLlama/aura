@@ -1,0 +1,16 @@
+.dash-card {
+  background-color: white;
+  box-shadow: 1px 1px 2px 2px gray;
+  border-radius: 6px;
+  display: flex;
+  justify-content: stretch;
+  /*height: 122px;*/
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.dash-card h3 {
+  font-weight: normal;
+  font-size: 1.1rem;
+}

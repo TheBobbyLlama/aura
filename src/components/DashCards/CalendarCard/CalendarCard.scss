@@ -1,0 +1,55 @@
+.calendar-card h3 {
+  position: absolute;
+}
+
+.calendar-card .MuiCalendarPicker-root > div:first-child {
+  color: $aura-highlight;
+  fill: $aura-highlight;
+  justify-content: flex-end;
+  margin: 0;
+  max-height: auto;
+  min-height: auto;
+  padding: 0;
+  position: relative;
+  stroke: $aura-highlight;
+  top: -2px;
+}
+
+.calendar-card .MuiCalendarPicker-root > div:first-child > div:first-child {
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  width: 124px;
+}
+
+.calendar-card
+  .MuiCalendarPicker-root
+  > div:first-child
+  > div:first-child
+  > button {
+  display: none;
+}
+
+.calendar-card .MuiCalendarPicker-root > div:first-child > div:last-child {
+  justify-content: space-between;
+  width: 130px;
+}
+
+.calendar-card .PrivatePickersSlideTransition-root {
+  min-height: 128px;
+}
+
+.calendar-card .MuiTypography-caption,
+.calendar-card .MuiPickersDay-dayWithMargin {
+  color: silver;
+  margin: 0 8px;
+  height: 20px;
+  width: 20px;
+}
+
+.calendar-card .MuiPickersDay-today {
+  background-color: $aura-highlight;
+  border: none !important;
+  color: white;
+}
