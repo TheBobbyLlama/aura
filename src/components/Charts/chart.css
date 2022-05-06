@@ -1,0 +1,38 @@
+.linechart-container{
+    width: 300px;
+    height: 200px;
+    background-color: cornflowerblue;
+}
+
+.chart-title{
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.chart-name{
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+
+}
+
+.chart-size-container{
+    width: 300px;
+    height: 100px;
+}
+
+.boxchart-container{
+    width: 300px;
+    height: 200px;
+    background-color:lightcoral;
+}
+
+
+.areachart-container{
+    width: 300px;
+    height: 200px;
+    background-color:mediumturquoise;
+}
+

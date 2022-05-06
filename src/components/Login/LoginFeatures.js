@@ -30,7 +30,6 @@ const LoginFeatures = (props) => {
         } else{
           setErrorState();
         }
-        
       });
   }
 
@@ -97,3 +96,4 @@ const LoginFeatures = (props) => {
 };
 
 export default LoginFeatures;
+
