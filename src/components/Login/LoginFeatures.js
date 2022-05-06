@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import Error from "../Error/Error"
+import Error from "../Error/Error";
+
 import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
@@ -34,7 +36,7 @@ const LoginFeatures = (props) => {
   }
 
   return (
-    <div className="center-container">
+    <form className="center-container" onSubmit={logInfo}>
       <Input
         placeholder="Email Address"
         size="large"
@@ -52,48 +54,47 @@ const LoginFeatures = (props) => {
           setPassword(e.target.value);
         }}
       />
-      {errorState && <Error errorMsg={errorState} />}
-      <Button value="Login" size="large" />
-      {/* {props.error && <Error errMessage={props.error} />} */}
-      <div>
-        <Button
-          variant="contained"
-          fullWidth={true}
-          gradient="true"
-          size="large"
-          onClick={handleFormSubmit}
-        >
-          LOGIN
-        </Button>
-      </div>
 
-      <a href="" className="forgot-password-txt">
-        Forgot Password
-      </a>
+      {errorState && <Error errorMsg={errorState} className="error-container" />}
 
-      <Divider />
+      <Button
+        variant="contained"
+        fullWidth={true}
+        gradient="true"
+        size="large"
+        type="submit"
+      >
+        LOGIN
+      </Button>
 
-      <a href="" className="login-using-txt">
-        Login using
-      </a>
+      <Link to="/reset" className="forgot-password-txt">
+        <span>Forgot Password</span>
+      </Link>
 
-      <div>
-        <Button
-          value="Gmail"
-          variant="outlined"
-          color="secondary"
-          fullWidth={true}
-          size="large"
-        >
-          <span>
-            <img src={gmailLogo} className="gmail-icon" />
-          </span>
-          Gmail
-        </Button>
-      </div>
-    </div>
+      <Divider sx={{ marginBottom: -2 }} />
+
+      <span className="login-using-txt">Login using</span>
+
+      <Button
+        value="Gmail"
+        variant="outlined"
+        color="secondary"
+        fullWidth={true}
+        size="large"
+        startIcon={<GmailIcon />}
+      >
+        Gmail
+      </Button>
+    </form>
   );
 };
 
 export default LoginFeatures;
 
+function GmailIcon() {
+  return (
+    <span>
+      <img src={gmailLogo} className="gmail-icon" />
+    </span>
+  );
+}

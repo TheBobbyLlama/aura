@@ -1,0 +1,44 @@
+.aura-header {
+  align-items: center;
+  background: linear-gradient(to right, #163160, #0a96e3);
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 18px;
+  width: 100%;
+}
+
+.aura-header__logo {
+  height: 30px;
+}
+
+.aura-header__search {
+  max-width: 570px;
+  width: 100%;
+}
+
+.aura-header__toolbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 50px;
+}
+
+@media screen and (max-width: 800px) {
+  .aura-header__toolbar {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aura-header {
+    flex-wrap: wrap;
+    padding: 18px;
+  }
+
+  .aura-header__search {
+    order: 1;
+  }
+}
