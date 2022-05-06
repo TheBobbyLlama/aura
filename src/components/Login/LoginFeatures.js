@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Error from "../Error/Error";
@@ -10,10 +10,11 @@ const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorShow, setErrorShow] = useState("");
+  const sendTo = useNavigate();
 
-  const logInfo = () => {
-    console.log(email);
-    console.log(password);
+  const logInfo = (e) => {
+    e.preventDefault();
+    sendTo("/dashboard");
   };
 
   return (

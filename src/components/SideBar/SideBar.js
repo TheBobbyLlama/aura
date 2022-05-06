@@ -21,8 +21,8 @@ const sidePics = [
 export default function SideBar() {
   return (
     <div className="sidebar">
-      {sidePics.map((pic) => {
-        return <img src={pic} alt="" />;
+      {sidePics.map((pic, index) => {
+        return <img key={index} src={pic} alt="" />;
       })}
     </div>
   );
