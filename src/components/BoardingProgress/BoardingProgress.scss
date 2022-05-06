@@ -5,6 +5,9 @@
   border: solid white 25px;
   padding: 0px;
   border-radius: 40px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .img-icon {
@@ -92,31 +95,4 @@
 .content-icon:hover div {
   visibility: visible;
   opacity: 0.7;
-}
-
-.progress-sub-container-header {
-  margin-left: 25px;
-  margin-top: 20px;
-  display: flex;
-  gap: 160px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.progress-sub-container-header > label > input {
-  margin-right: 15px;
-}
-
-.view {
-  font-size: small;
-  position: absolute;
-  bottom: 10px;
-  right: 130px;
-}
-.view:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.progress-sub-container-header > label > input[type="checkbox"] {
 }

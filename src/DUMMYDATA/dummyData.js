@@ -4,7 +4,7 @@ export const dummyData = [
     name: "Haoran Li",
     role: "Java Developer",
     status: "New",
-    progress: "0%",
+    progress: 0,
     date: "28 October 2020",
   },
   {
@@ -12,7 +12,7 @@ export const dummyData = [
     name: "Yubxuan Sun",
     role: "Web Developer",
     status: "Pending",
-    progress: "90%",
+    progress: 90,
     date: "8 October 2020",
   },
   {
@@ -20,7 +20,7 @@ export const dummyData = [
     name: "Haoran Li",
     role: ".Net Developer",
     status: "New",
-    progress: "30%",
+    progress: 0,
     date: "28 October 2020",
   },
   {
@@ -28,7 +28,7 @@ export const dummyData = [
     name: "Yubxuan Sun",
     role: "Web Developer",
     status: "Pending",
-    progress: "90%",
+    progress: 90,
     date: "8 October 2020",
   },
   {
@@ -36,7 +36,7 @@ export const dummyData = [
     name: "Haoran Li",
     role: "Java Developer",
     status: "New",
-    progress: "50%",
+    progress: 0,
     date: "28 October 2020",
   },
   {
@@ -44,7 +44,7 @@ export const dummyData = [
     name: "Yubxuan Sun",
     role: "Web Developer",
     status: "Pending",
-    progress: "90%",
+    progress: 90,
     date: "8 October 2020",
   },
   {
@@ -52,7 +52,7 @@ export const dummyData = [
     name: "Haoran Li",
     role: ".Net Developer",
     status: "New",
-    progress: "60%",
+    progress: 60,
     date: "28 October 2020",
   },
   {
@@ -60,7 +60,7 @@ export const dummyData = [
     name: "Yubxuan Sun",
     role: "Web Developer",
     status: "Pending",
-    progress: "90%",
+    progress: 90,
     date: "8 October 2020",
   },
   {
@@ -68,7 +68,7 @@ export const dummyData = [
     name: "Haoran Li",
     role: "Java Developer",
     status: "New",
-    progress: "70%",
+    progress: 70,
     date: "28 October 2020",
   },
 ];

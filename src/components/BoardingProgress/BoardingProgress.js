@@ -4,8 +4,9 @@ import { ReactComponent as calenderIcon } from "../../assets/images/svg/icn_hr_c
 import { ReactComponent as inactiveIcon } from "../../assets/images/svg/icn_user-inactivate.svg";
 import { ReactComponent as deleteIcon } from "../../assets/images/svg/icn_user-delete.svg";
 import { dummyData } from "../../DUMMYDATA/dummyData";
+import Datatable from "../DataGrid/DataTable";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useFormLogic } from "../../Hooks/useFormLogic";
 
 const ICONS = [
@@ -22,10 +23,9 @@ const BoardingProgress = () => {
       searchTerm: "",
       data: [],
       text: "",
-      isChecked: false,
     },
   });
-  const [isChecked, setIsChecked] = useState(false);
+
   const filterData = () => {
     const filteredDummyData = dummyData.filter((item) => {
       return item.name.toLowerCase().includes(state.searchTerm.toLowerCase());
@@ -33,10 +33,6 @@ const BoardingProgress = () => {
     setState({ ...state, data: filteredDummyData });
   };
 
-  const handleCheckbox = (e) => {
-    setIsChecked(!isChecked);
-  };
-  const handleMultipleCheckboxes = (e) => {};
   useEffect(() => {
     filterData();
   }, [state.searchTerm]);
@@ -68,38 +64,8 @@ const BoardingProgress = () => {
           </div>
         </div>
       </div>
-      <div className="progress-sub-container">
-        <div className="progress-sub-container-header">
-          <label>
-            <input type="checkbox" onChange={handleCheckbox} />
-            Full Name
-          </label>
-          <span>Job Role</span>
-          <span>Status</span>
-          <span>Progress</span>
-          <span>Due Data</span>
-        </div>
-        {state.data.map((item) => {
-          return (
-            <div key={item.id} className="">
-              <label htmlFor="info">
-                <input
-                  name="info"
-                  type="checkbox"
-                  checked={isChecked}
-                  onChange={handleMultipleCheckboxes}
-                />
-                {item.name}
-                {item.role}
-                {item.status}
-                {item.progress}
-                {item.date}
-              </label>
-            </div>
-          );
-        })}
-        <span className="view">View All</span>
-      </div>
+
+      <Datatable data={state.data} />
     </div>
   );
 };

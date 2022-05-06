@@ -8,6 +8,7 @@ import reminderIcon from "../../assets/images/images/bell.png";
 import gridIcon from "../../assets/images/images/grid.png";
 
 import "./Dashboard.scss";
+import DataTable from "../DataGrid/DataTable";
 
 const Dashboard = () => {
   return (
@@ -19,7 +20,7 @@ const Dashboard = () => {
       </AuraHeader>
       <main className="dashboard__content">
         <SideBar />
-        <h1>Content Goes Here!</h1>
+
         <BoardingProgress />
       </main>
     </div>
