@@ -1,5 +1,4 @@
 import React from 'react';
-import './chart.css';
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 
