@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Error from "../Error/Error";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e9cbdf75d29ead5c284a79f432fce2f2f9f67e5
 import gmailLogo from "../../assets/images/images/gmail-icon-svg-27.jpeg";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
@@ -11,7 +14,11 @@ import { login, getErrorMessage } from '../../api/auth.api';
 const LoginFeatures = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+<<<<<<< HEAD
   const [errorState, setErrorState] = useState("");
+=======
+  const [errorShow, setErrorShow] = useState("");
+>>>>>>> 3e9cbdf75d29ead5c284a79f432fce2f2f9f67e5
 
   const logInfo = () => {
     return {
@@ -55,6 +62,7 @@ const LoginFeatures = (props) => {
         }}
       />
 
+<<<<<<< HEAD
       {errorState && <Error errorMsg={errorState} className="error-container" />}
 
       <Button
@@ -75,6 +83,28 @@ const LoginFeatures = (props) => {
 
       <span className="login-using-txt">Login using</span>
 
+=======
+      {errorShow && <Error errorMsg={errorShow} className="error-container" />}
+
+      <Button
+        variant="contained"
+        fullWidth={true}
+        gradient="true"
+        size="large"
+        type="submit"
+      >
+        LOGIN
+      </Button>
+
+      <Link to="/reset" className="forgot-password-txt">
+        <span>Forgot Password</span>
+      </Link>
+
+      <Divider sx={{ marginBottom: -2 }} />
+
+      <span className="login-using-txt">Login using</span>
+
+>>>>>>> 3e9cbdf75d29ead5c284a79f432fce2f2f9f67e5
       <Button
         value="Gmail"
         variant="outlined"
