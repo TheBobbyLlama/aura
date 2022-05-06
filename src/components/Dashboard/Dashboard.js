@@ -2,6 +2,7 @@ import AuraHeader from "../AuraHeader/AuraHeader";
 import HeaderButton from "../HeaderButton/HeaderButton";
 import SideBar from "../SideBar/SideBar";
 import BoardingProgress from "../BoardingProgress/BoardingProgress";
+import DashboardCards from "../DashboardCards/DashboardCards";
 
 import userPic from "../../assets/images/images/emp-userpic.jpg";
 import reminderIcon from "../../assets/images/images/bell.png";
@@ -22,6 +23,7 @@ const Dashboard = () => {
         <SideBar />
 
         <BoardingProgress />
+        <DashboardCards />
       </main>
     </div>
   );
