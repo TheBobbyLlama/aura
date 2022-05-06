@@ -5,22 +5,13 @@ import CustomFooter from "./CustomDataTableFooter";
 
 import "./DataTable.scss";
 import StatusCell from "./StatusCell";
-// {
-//   id: 6,
-//   name: "Haoran Li",
-//   role: ".Net Developer",
-//   status: "New",
-//   progress: "60%",
-//   date: "28 October 2020",
-// }
+
 const columns = [
   {
     field: "name",
     headerName: "Full name",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    // valueGetter: (params) =>
-    //   `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     flex: 1,
   },
   {
@@ -56,7 +47,6 @@ const columns = [
 
 const styles = {
   backgroundColor: "#1062A0",
-  // height: "100%",
   width: "100%",
   color: "white",
   border: "none",
@@ -78,8 +68,6 @@ export default function DataTable({ data }) {
         autoHeight
         rows={data}
         columns={columns}
-        // pageSize={5}
-        // rowsPerPageOptions={[5]}
         checkboxSelection
         components={{
           Footer: CustomFooter,
