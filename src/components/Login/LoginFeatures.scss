@@ -1,7 +1,7 @@
 .center-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 23px;
 }
 
 .login-using-txt {
@@ -9,18 +9,29 @@
   align-self: flex-start;
   text-decoration: none;
   color: gray;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: -10px;
 }
 
 .forgot-password-txt {
+  margin-top: -10px;
   display: block;
   align-self: flex-end;
   text-decoration: none;
-  color: gray;
+  color: rgb(163, 163, 163);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .gmail-icon {
   height: 1.5rem;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 3px;
   margin-bottom: 3px;
+}
+
+.error-container {
+  margin-top: -17px;
+  margin-left: -230px;
 }
