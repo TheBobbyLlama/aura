@@ -33,7 +33,7 @@ const columns = [
     field: "progress",
     headerName: "Progress",
     renderCell: (params) => {
-      console.log(params.row.progress);
+      //console.log(params.row.progress);
       return <CircularProgressWithLabel value={params.row.progress} />;
     },
     flex: 1,
