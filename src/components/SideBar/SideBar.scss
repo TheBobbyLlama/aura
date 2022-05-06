@@ -1,0 +1,16 @@
+.sidebar {
+  align-items: center;
+  background-color: $aura-gradient-dark;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100%;
+  padding: 20px 0;
+  width: 64px;
+}
+
+.sidebar img {
+  cursor: pointer;
+  height: 26px;
+  width: 26px;
+}
