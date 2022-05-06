@@ -1,7 +1,8 @@
 .calendar-card h3 {
-  position: absolute;
+  position: absolute; /* Pull the card header out of normal layout */
 }
 
+/* Month control area */
 .calendar-card .MuiCalendarPicker-root > div:first-child {
   color: $aura-highlight;
   fill: $aura-highlight;
@@ -12,17 +13,19 @@
   padding: 0;
   position: relative;
   stroke: $aura-highlight;
-  top: -2px;
 }
 
+/* Month & Year item - Push it to the right, over the top of the prev/next arrows */
 .calendar-card .MuiCalendarPicker-root > div:first-child > div:first-child {
+  font-size: 0.9rem;
   justify-content: center;
   position: absolute;
   right: 0px;
-  top: 4px;
+  top: 2px;
   width: 124px;
 }
 
+/* Hide picker dropdown */
 .calendar-card
   .MuiCalendarPicker-root
   > div:first-child
@@ -31,25 +34,59 @@
   display: none;
 }
 
+/* Previous/next month selectors - spread them out to make space for the month/year text */
 .calendar-card .MuiCalendarPicker-root > div:first-child > div:last-child {
   justify-content: space-between;
+  position: relative;
+  top: -2px;
   width: 130px;
 }
 
+.calendar-card .MuiCalendarPicker-root > div:first-child > div:last-child svg {
+  fill: $aura-highlight;
+}
+
+.calendar-card .MuiCalendarPicker-viewTransitionContainer {
+  position: relative;
+  top: -4px;
+}
+
+/* Grid for days */
 .calendar-card .PrivatePickersSlideTransition-root {
-  min-height: 128px;
+  min-height: 68px;
+  overflow: hidden;
 }
 
-.calendar-card .MuiTypography-caption,
-.calendar-card .MuiPickersDay-dayWithMargin {
+/* Calendar rows */
+.calendar-card div[role="row"] {
+  margin: 0;
+}
+
+.calendar-card .MuiTypography-caption, /* SMTWTFS labels */
+.calendar-card .dayCell {
+  align-items: center;
   color: silver;
-  margin: 0 8px;
-  height: 20px;
-  width: 20px;
+  display: flex;
+  font-size: 0.5rem;
+  justify-content: center;
+  margin: 0 10px;
+  height: 14px;
+  width: 14px;
 }
 
-.calendar-card .MuiPickersDay-today {
+.calendar-card .dayText {
+  position: relative;
+  top: -1px;
+}
+
+.calendar-card .today {
+  color: black;
+}
+
+.calendar-card .event-day {
   background-color: $aura-highlight;
-  border: none !important;
+  border: none;
+  border-radius: 50%;
   color: white;
+  cursor: pointer;
 }

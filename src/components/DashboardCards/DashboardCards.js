@@ -10,7 +10,7 @@ export default function DashboardCards() {
       <CalendarCard />
       <CalendarCard />
       <div>
-        <Button>Edit</Button>
+        <Button className="edit-button">Edit</Button>
       </div>
     </div>
   );

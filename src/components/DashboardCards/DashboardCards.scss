@@ -12,3 +12,16 @@
   padding: 12px;
   width: 300px;
 }
+
+.dashboard-cards .edit-button {
+  background-color: #3282b9;
+  border-radius: 11px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: normal;
+  height: 22px;
+}
+
+.dashboard-cards .edit-button:hover {
+  background-color: $aura-highlight;
+}
