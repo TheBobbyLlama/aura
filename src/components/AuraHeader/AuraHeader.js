@@ -2,6 +2,8 @@ import { TextField } from "@mui/material"; // TODO - Replace with custom compone
 
 import headerLogo from "../../assets/images/svg/aura-logo-header-icon.svg";
 
+import "./AuraHeader.scss";
+
 function AuraHeader({ children, onSearch }) {
   return (
     <header className="aura-header">
