@@ -1,12 +1,13 @@
 import React from 'react';
 import successImg from "../../assets/images/images/checkmark.jpg";
 import Button from "../Button/Button";
+import AuraHeader from '../AuraHeader/AuraHeader'
 
 function ResetMsg(props) {
 
     return (
         <>
-          <header></header>
+          <AuraHeader />
           <div class="resetMsg-container">
             <img class='successImg' src={successImg} />
             <p>Password reset successful</p>
