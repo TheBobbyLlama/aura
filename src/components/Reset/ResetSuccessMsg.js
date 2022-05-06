@@ -1,16 +1,16 @@
 import React from 'react';
-import './reset.scss';
-import {success} from "../../assets/images/svg/Checkmark_green.svg";
+import successImg from "../../assets/images/images/checkmark.jpg";
+import AuraHeader from '../AuraHeader/AuraHeader'
 
 
 function ResetSuccessMsg() {
       
     return (
         <>
-          <header></header>
-          <div class="content-container">
-            <svg src={success} />
-            <p>Password reset link has been sent to tour registered email ID</p>
+          <AuraHeader />
+          <div class="resetMsg-container">
+          <img class='successImg' src={successImg} />
+            <p>Password reset link has been sent to  your registered email ID</p>
           </div>
         </>
       );
