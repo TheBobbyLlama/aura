@@ -1,21 +1,23 @@
 .progress-container {
-  //didn't work
-  //   background-color: $aura-gradient-dark;
-  background-color: rgb(22, 57, 172);
+  background-color: #0d478c;
   box-sizing: border-box;
-  width: 100%;
+  width: 95%;
   border: solid white 25px;
-  padding: 5px;
+  padding: 0px;
   border-radius: 40px;
 }
 
 .img-icon {
   width: 30px;
+  height: 30px;
+  fill: #5296ce;
+  transition: fill 0.25s;
 }
 
 .img-icon:hover {
   cursor: pointer;
   background-color: rgb(46, 86, 170);
+  fill: white;
 }
 
 .progress-header {
@@ -27,34 +29,94 @@
 
 .span-text {
   font-weight: bolder;
-  color: rgb(19, 170, 120);
+  color: #36f6ff;
   padding-right: 40px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .progress-input {
-  //add search icon
-  background: url("");
+  background: url("../../assets/images/svg/search_icon.svg") no-repeat;
+  background-size: 20px;
+  background-position: 4px;
   padding: 12px;
+
   background-color: white;
   border-radius: 50px;
-  height: 25px;
-  width: 250px;
+  height: 15px;
+  width: 220px;
+  text-indent: 20px;
+}
+
+.progress-input::placeholder {
+  padding: 3px;
+  font-size: small;
+  opacity: 0.7;
 }
 
 .progress-icons {
   display: flex;
-  gap: 15px;
-}
-
-.icon-message {
-  width: auto;
-  background-color: aqua;
-  font-size: 12px;
-  font-weight: bolder;
-  padding: 3px;
 }
 
 .progress-sub-container {
+  margin-top: -30px;
+  height: 100%;
+  border-radius: 13px;
+
+  background-color: #1062a0;
+  color: white;
   display: flex;
   flex-direction: column;
+}
+
+.content-icon > div {
+  position: relative;
+  opacity: 0;
+  font-size: 10px;
+  padding: 2.5px;
+
+  background-color: #17b8ff;
+}
+
+.content-icon > div::after {
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 15px;
+  content: "";
+  top: -3px;
+  height: 3px;
+  position: absolute;
+  background-color: #17b8ff;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.content-icon:hover div {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.progress-sub-container-header {
+  margin-left: 25px;
+  margin-top: 20px;
+  display: flex;
+  gap: 160px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.progress-sub-container-header > label > input {
+  margin-right: 15px;
+}
+
+.view {
+  font-size: small;
+  position: absolute;
+  bottom: 10px;
+  right: 130px;
+}
+.view:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.progress-sub-container-header > label > input[type="checkbox"] {
 }

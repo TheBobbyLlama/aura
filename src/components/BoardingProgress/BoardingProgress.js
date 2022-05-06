@@ -1,57 +1,31 @@
-import mailIcon from "../../assets/images/svg/icn_send-invite.svg";
-import notifyIcon from "../../assets/images/svg/icn_reminder.svg";
-import calenderIcon from "../../assets/images/svg/icn_hr_calendar.svg";
-import inactiveIcon from "../../assets/images/svg/icn_user-inactivate.svg";
-import deleteIcon from "../../assets/images/svg/icn_user-delete.svg";
+import { ReactComponent as mailIcon } from "../../assets/images/svg/icn_send-invite.svg";
+import { ReactComponent as notifyIcon } from "../../assets/images/svg/icn_reminder.svg";
+import { ReactComponent as calenderIcon } from "../../assets/images/svg/icn_hr_calendar.svg";
+import { ReactComponent as inactiveIcon } from "../../assets/images/svg/icn_user-inactivate.svg";
+import { ReactComponent as deleteIcon } from "../../assets/images/svg/icn_user-delete.svg";
 import { dummyData } from "../../DUMMYDATA/dummyData";
 
-import Input from "../Input/Input";
-import { useState, useEffect } from "react";
-
-import "./BoardingProgress.scss";
+import { useEffect, useState } from "react";
+import { useFormLogic } from "../../Hooks/useFormLogic";
 
 const ICONS = [
-  { icon: mailIcon, message: "Send Invite" },
-  { icon: notifyIcon, message: "Notifications" },
-  { icon: calenderIcon, message: "Calender" },
-  { icon: inactiveIcon, message: "Inactivate" },
-  { icon: deleteIcon, message: "Delete" },
+  { Icon: mailIcon, message: "Send Invite" },
+  { Icon: notifyIcon, message: "Notifications" },
+  { Icon: calenderIcon, message: "Calender" },
+  { Icon: inactiveIcon, message: "Inactivate" },
+  { Icon: deleteIcon, message: "Delete" },
 ];
 
-const useFormLogic = ({ initalFormState }) => {
-  const [state, setState] = useState(initalFormState);
-  //   const handleChange = (e) => {
-  //     setState({
-  //       ...state,
-  //       [e.target.name]: e.target.value,
-  //     });
-  //   };
-
-  return [state, setState];
-};
-
 const BoardingProgress = () => {
-  const [state, setState] = useFormLogic({
+  const [state, setState, handleChange] = useFormLogic({
     initalFormState: {
       searchTerm: "",
       data: [],
-      isHovering: false,
       text: "",
+      isChecked: false,
     },
   });
-
-  const handleMouseOver = (icon) => {
-    setState({ ...state, isHovering: true, text: icon });
-  };
-  const handleMouseOut = () => {
-    setState({ ...state, isHovering: false, text: "" });
-  };
-
-  const handleChange = (e) => {
-    setState({ ...state, searchTerm: e.target.value });
-    console.log(state);
-  };
-
+  const [isChecked, setIsChecked] = useState(false);
   const filterData = () => {
     const filteredDummyData = dummyData.filter((item) => {
       return item.name.toLowerCase().includes(state.searchTerm.toLowerCase());
@@ -59,6 +33,10 @@ const BoardingProgress = () => {
     setState({ ...state, data: filteredDummyData });
   };
 
+  const handleCheckbox = (e) => {
+    setIsChecked(!isChecked);
+  };
+  const handleMultipleCheckboxes = (e) => {};
   useEffect(() => {
     filterData();
   }, [state.searchTerm]);
@@ -77,34 +55,50 @@ const BoardingProgress = () => {
         </div>
         <div className="progress-header-col">
           <div className="progress-icons">
-            {ICONS.map((item) => {
+            {ICONS.map((icon) => {
+              const ToolBarIcon = icon.Icon;
               return (
-                <img
-                  key={item.message}
-                  src={item.icon}
-                  alt=""
-                  className="img-icon"
-                  onMouseOver={() => handleMouseOver(item.message)}
-                  onMouseOut={handleMouseOut}
-                ></img>
+                <div className="content-icon" key={icon.message}>
+                  <ToolBarIcon className={"img-icon"} />
+
+                  <div>{icon.message}</div>
+                </div>
               );
             })}
           </div>
-
-          {state.isHovering && (
-            <span className="icon-message">{state.text}</span>
-          )}
         </div>
       </div>
       <div className="progress-sub-container">
+        <div className="progress-sub-container-header">
+          <label>
+            <input type="checkbox" onChange={handleCheckbox} />
+            Full Name
+          </label>
+          <span>Job Role</span>
+          <span>Status</span>
+          <span>Progress</span>
+          <span>Due Data</span>
+        </div>
         {state.data.map((item) => {
           return (
-            <label>
-              <input type="checkbox" />
-              {item.name}
-            </label>
+            <div key={item.id} className="">
+              <label htmlFor="info">
+                <input
+                  name="info"
+                  type="checkbox"
+                  checked={isChecked}
+                  onChange={handleMultipleCheckboxes}
+                />
+                {item.name}
+                {item.role}
+                {item.status}
+                {item.progress}
+                {item.date}
+              </label>
+            </div>
           );
         })}
+        <span className="view">View All</span>
       </div>
     </div>
   );
